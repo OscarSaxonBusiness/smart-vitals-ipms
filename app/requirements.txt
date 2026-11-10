@@ -1,0 +1,6 @@
+flask
+pandas
+numpy
+joblib
+# The scikit-learn version that saved your model (see notebook 01). A different version may not load it.
+scikit-learn==___

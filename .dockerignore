@@ -1,0 +1,10 @@
+# Never copy these into an image
+.git
+.env
+data/private
+notebooks
+*.ipynb
+docs
+__pycache__
+.pytest_cache
+*.db

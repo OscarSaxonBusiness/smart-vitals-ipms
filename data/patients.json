@@ -1,0 +1,102 @@
+{
+ "P001": {
+  "risk_level": 3,
+  "diabetic": 0,
+  "clinician": "C02"
+ },
+ "P002": {
+  "risk_level": 1,
+  "diabetic": 1,
+  "clinician": "C03"
+ },
+ "P003": {
+  "risk_level": 2,
+  "diabetic": 0,
+  "clinician": "C04"
+ },
+ "P004": {
+  "risk_level": 2,
+  "diabetic": 0,
+  "clinician": "C01"
+ },
+ "P005": {
+  "risk_level": 1,
+  "diabetic": 0,
+  "clinician": "C02"
+ },
+ "P006": {
+  "risk_level": 1,
+  "diabetic": 0,
+  "clinician": "C03"
+ },
+ "P007": {
+  "risk_level": 1,
+  "diabetic": 1,
+  "clinician": "C04"
+ },
+ "P008": {
+  "risk_level": 1,
+  "diabetic": 0,
+  "clinician": "C01"
+ },
+ "P009": {
+  "risk_level": 1,
+  "diabetic": 0,
+  "clinician": "C02"
+ },
+ "P010": {
+  "risk_level": 1,
+  "diabetic": 1,
+  "clinician": "C03"
+ },
+ "P011": {
+  "risk_level": 1,
+  "diabetic": 0,
+  "clinician": "C04"
+ },
+ "P012": {
+  "risk_level": 3,
+  "diabetic": 0,
+  "clinician": "C01"
+ },
+ "P013": {
+  "risk_level": 1,
+  "diabetic": 0,
+  "clinician": "C02"
+ },
+ "P014": {
+  "risk_level": 2,
+  "diabetic": 1,
+  "clinician": "C03"
+ },
+ "P015": {
+  "risk_level": 3,
+  "diabetic": 0,
+  "clinician": "C04"
+ },
+ "P016": {
+  "risk_level": 2,
+  "diabetic": 0,
+  "clinician": "C01"
+ },
+ "P017": {
+  "risk_level": 1,
+  "diabetic": 0,
+  "clinician": "C02"
+ },
+ "P018": {
+  "risk_level": 1,
+  "diabetic": 0,
+  "clinician": "C03"
+ },
+ "P019": {
+  "risk_level": 2,
+  "diabetic": 0,
+  "clinician": "C04"
+ },
+ "P020": {
+  "risk_level": 3,
+  "diabetic": 1,
+  "clinician": "C01"
+ }
+}

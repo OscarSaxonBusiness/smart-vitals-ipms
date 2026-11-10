@@ -1,0 +1,28 @@
+{
+  "target": "status",
+  "labels": [
+    "Critical",
+    "Normal",
+    "Warning"
+  ],
+  "features": [
+    "risk_level",
+    "diabetic",
+    "heart_rate",
+    "spo2",
+    "systolic_bp",
+    "diastolic_bp",
+    "temperature",
+    "glucose"
+  ],
+  "example_row": {
+    "risk_level": 1.0,
+    "diabetic": 0.0,
+    "heart_rate": 58.0,
+    "spo2": 97.3,
+    "systolic_bp": 108.0,
+    "diastolic_bp": 82.0,
+    "temperature": 37.1,
+    "glucose": null
+  }
+}

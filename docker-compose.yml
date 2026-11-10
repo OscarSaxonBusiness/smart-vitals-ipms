@@ -1,0 +1,24 @@
+# Smart Vitals. Start: docker compose up --build   Stop: docker compose down
+services:
+  api:
+    build: {context: ., dockerfile: app/Dockerfile}
+    ports:
+      - "___:8000"         # TODO: your port -> container port 8000
+    volumes:
+      - vitals-data:/data  # readings survive a restart
+    healthcheck:           # is the API answering GET /health?
+      test: ["CMD", "python", "-m", "app.healthcheck"]
+      interval: 5s
+      retries: 10
+
+  simulator:
+    build: {context: ., dockerfile: simulator/Dockerfile}
+    environment:
+      API_URL: http://___:8000   # TODO: a service's name is its address
+      MINUTES: "30"
+      FAULTS: "on"
+    depends_on:
+      api: {condition: service_healthy}
+
+volumes:
+  vitals-data:
