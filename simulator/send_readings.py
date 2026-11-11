@@ -77,7 +77,7 @@ def make_readings(seed=8):
 
 def backoff_delay(attempt, base=0.5, cap=8.0):
     """Week 7: wait longer after each failed try, with jitter so phones do not all retry together."""
-    return random.uniform(0, min(___, base * 2 ** ___))       # TODO: never longer than cap; doubles with each attempt
+    return random.uniform(0, min(cap, base * 2 ** attempt))       # TODO: never longer than cap; doubles with each attempt
 
 
 def send(reading, tries=6):

@@ -15,7 +15,7 @@ def problems_in(reading):
         value = reading.get(name)
         if value is None:            # a missing vital is allowed: the model fills the gap (requirement 9)
             continue
-        if not (___ <= value <= ___):                         # TODO: the two limits (class project, Step 2a)
+        if not (low <= value <= high):                        
             problems.append(f"{name} = {value} is outside {low} to {high}")
     for field in ["reading_id", "patient_id", "time"]:
         if not reading.get(field):
@@ -25,28 +25,28 @@ def problems_in(reading):
 
 def already_stored(db, reading_id):
     """True if this reading was stored before: a resent copy."""
-    row = db.execute("SELECT 1 FROM readings WHERE reading_id = ?", (___,)).fetchone()   # TODO: which ID? (Step 2b)
-    return row is not ___                                                                  # TODO
+    row = db.execute("SELECT 1 FROM readings WHERE reading_id = ?", (reading_id,)).fetchone()   
+    return row is not None                                                        
 
 
 def make_alert(reading, status, patient):
     """The alert the brief asks for (requirement 4): which patient, which clinician, the vitals and the time."""
     return {"patient_id": reading["patient_id"],
-            "clinician_id": ___,                   # TODO: the patient's assigned clinician (Step 2c)
-            "time": ___,                           # TODO: when the reading was taken
+            "clinician_id": patient["clinician"],           
+            "time": reading["time"],                      
             "status": status,
             "vitals": {v: reading.get(v) for v in VITALS}}
 
 
 def status_code(outcome):
     """The HTTP status code the API sends back for each outcome."""
-    codes = {"created": ___,                   # TODO (Step 2c)
-             "duplicate": ___,
-             "invalid": ___,
-             "unknown patient": ___}
+    codes = {"created": 201,                   
+             "duplicate": 200,
+             "invalid": 422,
+             "unknown patient": 404}
     return codes[outcome]
 
 
 def can_view(clinician_id, patient):
     """A clinician may see only their own patients (requirement 5). Switched on with CHECK_ACCESS=on."""
-    return patient is not None and patient["clinician"] == ___         # TODO (Step 5c)
+    return patient is not None and patient["clinician"] == clinician_id
