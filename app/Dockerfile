@@ -1,5 +1,5 @@
 # The Smart Vitals API image (built from the repository root)
-FROM ___                      # TODO: an official, slim Python 3.12 image
+FROM python:3.12-slim                    
 
 WORKDIR /service
 
@@ -16,5 +16,5 @@ ENV MODEL_PATH=/service/models/first_model.joblib \
     PATIENTS_PATH=/service/data/patients.json \
     DB_PATH=/data/smart_vitals.db
 
-EXPOSE ___                    # TODO: the port the API listens on
-CMD ["python", "-m", "___"]   # TODO: the module that starts the API
+EXPOSE 8000                    
+CMD ["python", "-m", "app.main"]   

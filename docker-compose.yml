@@ -3,7 +3,7 @@ services:
   api:
     build: {context: ., dockerfile: app/Dockerfile}
     ports:
-      - "___:8000"         # TODO: your port -> container port 8000
+      - "8000:8000"         # TODO: your port -> container port 8000
     volumes:
       - vitals-data:/data  # readings survive a restart
     healthcheck:           # is the API answering GET /health?
@@ -14,7 +14,7 @@ services:
   simulator:
     build: {context: ., dockerfile: simulator/Dockerfile}
     environment:
-      API_URL: http://___:8000   # TODO: a service's name is its address
+      API_URL: http://api:8000   # TODO: a service's name is its address
       MINUTES: "30"
       FAULTS: "on"
     depends_on:
