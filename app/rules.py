@@ -3,8 +3,8 @@
 VITALS = ["heart_rate", "spo2", "systolic_bp", "diastolic_bp", "temperature", "glucose"]
 
 # Values a sensor can really produce. Outside these = a sensor error.
-# Heart rate widened from (30, 220) after the class project: a real heart rate of 28 was being thrown away.
-LIMITS = {"heart_rate": (20, 240), "spo2": (70, 100), "systolic_bp": (60, 250),
+# Systolic BP widened from (60, 250): real Critical readings of 54-59 were being thrown away.
+LIMITS = {"heart_rate": (20, 240), "spo2": (70, 100), "systolic_bp": (40, 250),
           "diastolic_bp": (30, 150), "temperature": (30, 43), "glucose": (20, 600)}
 
 
